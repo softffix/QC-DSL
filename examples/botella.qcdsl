@@ -1,0 +1,16 @@
+
+producto "Botella de plástico"
+
+parametro peso unidad "g" minimo 48 maximo 52
+
+regla "Peso inferior"
+    cuando peso < 48
+    entonces rechazar y alertar "Peso inferior al permitido"
+
+regla "Peso excesivo"
+    cuando peso > 80
+    entonces rechazar y alertar "Peso superior al permitido"
+
+regla "Control crítico"
+    cuando peso < 48 o peso > 52
+    entonces detener_linea "Producto fuera de tolerancia"
